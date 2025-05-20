@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { BookOpen, ShoppingCart } from 'lucide-react';
-import { useCart } from '../../hooks/useCart';
+// import { useCart } from '../../hooks/useCart';
+import { useCartContext } from '../../context/CartContext';
 
 const Header: React.FC = () => {
-  const { getTotalItems, toggleCart } = useCart();
+  const { getTotalItems, toggleCart } = useCartContext();
   const location = useLocation();
   
   return (
@@ -45,7 +46,7 @@ const Header: React.FC = () => {
                     location.pathname === '/news' ? 'border-b-2 border-secondary' : ''
                   }`}
                 >
-                  Novedades
+                  Destacados
                 </Link>
               </li>
               <li className="header__nav-item">

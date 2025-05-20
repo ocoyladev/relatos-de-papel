@@ -7,14 +7,15 @@ import Footer from '../common/Footer';
 import Cart from '../common/Cart';
 import Rating from '../common/Rating';
 import { ChevronLeft, BookOpen, Download, ShoppingCart } from 'lucide-react';
-import { useCart } from '../../hooks/useCart';
+// import { useCart } from '../../hooks/useCart';
+import { useCartContext } from '../../context/CartContext';
 
 const BookPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [book, setBook] = useState<Book | null>(null);
   const [selectedFormat, setSelectedFormat] = useState<'physical' | 'digital'>('physical');
   const [isLoading, setIsLoading] = useState(true);
-  const { addToCart } = useCart();
+  const { addToCart } = useCartContext();
   const navigate = useNavigate();
 
   useEffect(() => {

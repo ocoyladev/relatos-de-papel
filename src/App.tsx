@@ -7,14 +7,10 @@ import CategoriesPage from './components/categories/CategoriesPage';
 import NewsPage from './components/news/NewsPage';
 import CategoryBooksPage from './components/categories/CategoryBooksPage';
 import LandingPage from './components/landing/LandingPage';
-import Header from './components/common/Header';
-import Cart from './components/common/Cart';
 
 function App() {
   return (
-    <Router>
-      {/* <Header/> 
-      <Cart/> */}
+    <Router>     
       <Routes>         
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<HomePage />} />

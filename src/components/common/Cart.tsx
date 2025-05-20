@@ -1,7 +1,8 @@
 import React from 'react';
 import { X, ShoppingBag, Trash } from 'lucide-react';
-import { useCart } from '../../hooks/useCart';
+// import { useCart } from '../../hooks/useCart';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext';
 
 const Cart: React.FC = () => {
   const { 
@@ -11,7 +12,7 @@ const Cart: React.FC = () => {
     updateQuantity, 
     getTotalPrice, 
     setIsCartOpen 
-  } = useCart();
+  } = useCartContext();
   const navigate = useNavigate();
 
   const handleQuantityChange = (

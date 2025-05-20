@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import { useCart } from '../../hooks/useCart';
+// import { useCart } from '../../hooks/useCart';
 import { Check, CreditCard, Truck, MapPin } from 'lucide-react';
+import { useCartContext } from '../../context/CartContext';
 
 const CheckoutPage: React.FC = () => {
-  const { cartItems, getTotalPrice, clearCart } = useCart();
+  const { cartItems, getTotalPrice, clearCart } = useCartContext();
   const navigate = useNavigate();
   const [processingPayment, setProcessingPayment] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);

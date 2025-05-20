@@ -2,14 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Book as BookType } from '../../types';
 import { ShoppingBag } from 'lucide-react';
-import { useCart } from '../../hooks/useCart';
+// import { useCart } from '../../hooks/useCart';
+import { useCartContext } from '../../context/CartContext';
 
 interface BookCardProps {
   book: BookType;
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
-  const { addToCart } = useCart();
+  const { addToCart } = useCartContext();
   
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
